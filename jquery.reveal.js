@@ -8,10 +8,12 @@
 
 
 (function ($) {
-  $('a[data-reveal-id]').live('click', function (event) {
-    event.preventDefault();
-    var modalLocation = $(this).attr('data-reveal-id');
-    $('#' + modalLocation).reveal($(this).data());
+  $(function() {
+    $('a[data-reveal-id]').click(function (event) {
+      event.preventDefault();
+      var modalLocation = $(this).attr('data-reveal-id');
+      $('#' + modalLocation).reveal($(this).data());
+    });
   });
 
   $.fn.reveal = function (options) {
